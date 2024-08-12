@@ -6,8 +6,7 @@
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary-background: #69005a !important;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -87,13 +86,33 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: url('/assets/codioful-site-background.jpg') fixed;
+  background-size: cover;
+
+  .playfair-display-headers {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    color: white;
+    text-shadow: 2px 2px 4px #b095b9 ;
+  }
 }
+
+.btn-primary {
+  background-color: transparent !important;
+  color: #69005a;
+  border: none;
+  /* padding: 10px 20px; */
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  &:hover {
+      color: #b095b9;
+  }
+}
+
 
 a {
   color: inherit;
