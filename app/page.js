@@ -1,7 +1,23 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import SocialMedia from "./components/SocialMedia";
 
 export default function Home() {
+
+  const creatorData = [
+    { name: 'Tyler Perry',
+      contentType: 'Actor',
+      description: 'Tyler Perry is a renowned American actor, playwright, filmmaker, and entrepreneur known for creating and performing the Madea character. He has built a media empire through his production company, Tyler Perry Studios, producing numerous successful films, TV shows, and stage plays that often explore themes of faith, family, and African-American life.',
+      youtube: '',
+      instagram: 'celinasacct',
+      tiktok: '',
+      twitter: '',
+      twitch: '',
+      discord: 'hamlit1163',
+      image: '',
+    }
+  ]
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -9,86 +25,28 @@ export default function Home() {
           Get started by editing&nbsp;
           <code className={styles.code}>app/page.js</code>
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className={`${styles.center } flex-column`}>
+      <h1 className="playfair-display-headers">Who's your favorite content creator?</h1>
+      <h6 className="playfair-display-headers" style={{fontWeight: 500}}>Add your favorite content creators and check out other people's favorites as well.</h6>
       </div>
 
       <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+        <div
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
+          <div className={styles.grid}>
+            <image src="/assets/codioful-site-background.jpg" width={50} height={50}></image>
+           <div>
           <h2>
-            Docs <span>-&gt;</span>
+            {creatorData[0].name}
           </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <p>{creatorData[0].contentType}</p>
+          <button className={styles.primaryBtn}>Read More <span>-&gt;</span></button>
+          </div></div> 
+          <SocialMedia instagramUser={creatorData[0].instagram} discordUser={creatorData[0].discord}></SocialMedia>
+        </div>
       </div>
     </main>
   );

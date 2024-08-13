@@ -5,8 +5,13 @@
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
+    /* Pico Styling Updates */
+  --pico-primary-background: #69005a !important;
+  --pico-primary: #69005a !important;
+  --pico-secondary: #b095b9 !important;
+
+
   --foreground-rgb: 0, 0, 0;
-  --primary-background: #69005a !important;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -39,7 +44,7 @@
   --card-border-rgb: 131, 134, 135;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -70,7 +75,7 @@
     --card-rgb: 100, 100, 100;
     --card-border-rgb: 200, 200, 200;
   }
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -101,7 +106,7 @@ body {
 
 .btn-primary {
   background-color: transparent !important;
-  color: #69005a;
+  color: var(--pico-primary);
   border: none;
   /* padding: 10px 20px; */
   margin: 10px;
@@ -109,7 +114,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s;
   &:hover {
-      color: #b095b9;
+      color: var(--pico-secondary);
   }
 }
 
