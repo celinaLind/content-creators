@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# WEB103 Prework - *Creatorverse*
 
-## Getting Started
+Submitted by: **Celina Lind**
 
-First, run the development server:
+About this web app: **Users are able to checkout the communities favorite content creators as well as add their own.**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Time spent: **15-20** hours (includes research, designing, and planning time)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Required Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+The following **required** functionality is completed:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<!-- 👉🏿👉🏿👉🏿 Make sure to check off completed functionality below -->
+- [X] **A logical component structure in React is used to create the frontend of the app**
+- [X] **At least five content creators are displayed on the homepage of the app**
+- [X] **Each content creator item includes their name, a link to their channel/page, and a short description of their content**
+- [X] **API calls use the async/await design pattern via Axios or fetch()**
+- [X] **Clicking on a content creator item takes the user to their details page, which includes their name, url, and description**
+- [X] **Each content creator has their own unique URL**
+- [X] **The user can edit a content creator to change their name, url, or description**
+- [X] **The user can delete a content creator**
+- [X] **The user can add a new content creator by entering a name, url, or description and then it is displayed on the homepage**
 
-## Learn More
+The following **optional** features are implemented:
 
-To learn more about Next.js, take a look at the following resources:
+- [X] Picocss is used to style HTML elements *(not done well will have to do more research)*
+- [X] The content creator items are displayed in a creative format, like cards instead of a list
+- [ ] An image of each content creator is shown on their content creator card
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The following **additional** features are implemented:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+* [ ] List anything else that you added to improve the site's functionality!
 
-## Deploy on Vercel
+## Video Walkthrough
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Here's a walkthrough of implemented required features:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+👉🏿<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+<!-- Replace this with whatever GIF tool you used! -->
+GIF created with ...  👉🏿 GIF tool here
+<!-- Recommended tools:
+[Kap](https://getkap.co/) for macOS
+[ScreenToGif](https://www.screentogif.com/) for Windows
+[peek](https://github.com/phw/peek) for Linux. -->
+
+## Notes
+
+Describe any challenges encountered while building the app or any additional context you'd like to add.
+
+## License
+
+Copyright [2024] [Celina Lind]
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+> http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
