@@ -1,23 +1,23 @@
-
+'use client'
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
+import ClientData from "../components/ClientData"
 
-export default function Form({ creatorData, type }) {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
+export default function Form() {
+    const searchParams = useSearchParams();
+    const type = searchParams.get('type') || 'Add';
 
     return (
-            <div>
-            <button onClick={openModal}>Add Creator</button>
-            {isModalOpen && (
-                <dialog open>
-                    <article>
-                        <header>
-                            <a href="#close" aria-label="Close" className="close" onClick={closeModal}></a>
-                            <h3>{type} New Creator</h3>
-                        </header>
-                        <form>
+            <div className='container' style={{margin: '8px auto'}}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <h3>{type} Creator</h3>
+                    <Link href='/' passHref>
+                        <button className="btn-primary">Home</button>
+                    </Link>
+                </div>
+                 <form>
                             <fieldset>
                                 <label>
                                     First name
@@ -87,8 +87,5 @@ export default function Form({ creatorData, type }) {
                                 value={type == "Add" ? "Add": "Save"}
                             />
                         </form>
-                    </article>
-                </dialog>
-            )
-        } </div>);
+            </div>);
     }
