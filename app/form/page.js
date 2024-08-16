@@ -107,22 +107,24 @@ export default function Form() {
             <form onSubmit={handleSubmit}>
                 <fieldset>
                     <label>
-                        Name
+                        Name*
                         <input
                             name="name"
                             placeholder="Name"
                             autoComplete="given-name"
                             value={formData.name || ''}
                             onChange={handleInputChange}
+                            required
                         />
                     </label>
                     <label>
-                        Description
+                        Description*
                         <textarea
                             name="description"
                             placeholder="Enter a description"
                             value={formData.description || ''}
                             onChange={handleInputChange}
+                            required
                         />
                     </label>
                     <label>
@@ -135,6 +137,7 @@ export default function Form() {
                             onChange={handleInputChange}
                         />
                     </label>
+                    <h4>Socials (don't include the @ symbol)</h4>
                     <label>
                         Instagram
                         <input

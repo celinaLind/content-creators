@@ -7,10 +7,19 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 const SocialMedia = dynamic(() => import('./components/SocialMedia'), { ssr: false });
 import { createClient } from "@/utils/supabase/client";
+import { useSearchParams } from "next/navigation";
 export default function Home() {
-  const [isProfileModalOpen, setProfileIsModalOpen] = useState(false);
+  const searchParams = useSearchParams();
+  const [openProfileId, setOpenProfileId] = useState(null);
   const [creatorsData, setCreatorsData] =useState([]);
   const supabase = createClient();
+
+  useEffect(() => {
+    const creatorId = searchParams.get("creatorId");
+    if (creatorId) {
+      setOpenProfileId(creatorId);
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,25 +37,6 @@ export default function Home() {
   }, [])
 
 
-  const creatorData = [
-    {
-      name: 'Tyler Perry',
-      pronouns: 'He/Him',
-      contentType: 'Actor',
-      description: 'Tyler Perry is a renowned American actor, playwright, filmmaker, and entrepreneur known for creating and performing the Madea character. He has built a media empire through his production company, Tyler Perry Studios, producing numerous successful films, TV shows, and stage plays that often explore themes of faith, family, and African-American life.',
-      usernames: {
-        youtube: '',
-        instagram: 'celinasacct',
-        tiktok: '',
-        twitter: '',
-        twitch: '',
-        discord: 'hamlit1163',
-        linkedIn: ''
-      },
-      image: '',
-    }
-  ]
-
   return (
     <main className={styles.main}>
 
@@ -57,21 +47,25 @@ export default function Home() {
       </div>
 
       <div className={styles.grid}>
-        {creatorsData.map((creator, index) => (
-          <div key={index} className={styles.card}>
-            <div className={styles.grid}>
-              <Image src="/assets/codioful-site-background.jpg" width={50} height={50}/>
-              <div>
-                <h2>
-                  {creator.name} 
-                </h2>
-                <p>{creator.contentType}</p>
-                <CreatorProfile creatorData={creator} isModalOpen={isProfileModalOpen} setIsModalOpen={setProfileIsModalOpen}/>
+        {creatorsData.length === 0 ? (
+          <h5 style={{textAlign: "center"}}>Please add creators</h5>
+        ) : (
+          creatorsData.map((creator, index) => (
+            <div key={creator.id} className={styles.card}>
+              <div className={styles.grid}>
+                <Image src="/assets/codioful-site-background.jpg" width={150} height={150} alt="generic-profile-image"/>
+                <div>
+                  <h2>
+                    {creator.name} 
+                  </h2>
+                  <p>{creator.contentType}</p>
+                  <CreatorProfile creatorData={creator} isModalOpen={openProfileId === creator.id} setIsModalOpen={(isOpen) => setOpenProfileId(isOpen ? creator.id :null)}/>
+                </div>
               </div>
+              <SocialMedia linkedInUser={creator.linkedIn} tiktokUser={creator.tiktok} twitchUser={creator.twitch} youtubeUser={creator.youtube} instagramUser={creator.instagram} discordChannel={creator.discord}></SocialMedia>
             </div>
-            <SocialMedia linkedInUser={creator.linkedIn} tiktokUser={creator.tiktok} twitchUser={creator.twitch} youtubeUser={creator.youtube} instagramUser={creator.instagram} discordChannel={creator.discord}></SocialMedia>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </main>
   );
