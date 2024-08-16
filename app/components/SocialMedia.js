@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect } from 'react'
-import { faDiscord, faInstagram, faLinkedin, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faDiscord, faInstagram, faLinkedin, faTiktok, faYoutube, faTwitch } from '@fortawesome/free-brands-svg-icons';
 
 // Create a SocialMedia component that will display social media links with the ability to distinguish which link is which
 export default function SocialMedia({linkedInUser, tiktokUser, discordChannel, instagramUser, youtubeUser, twitchUser}) {
@@ -25,7 +25,7 @@ export default function SocialMedia({linkedInUser, tiktokUser, discordChannel, i
                 <FontAwesomeIcon icon={faTiktok} />
             </a>}
             {twitchUser && <a className="btn-primary" href={`https://www.twitch.tv/${twitchUser}`} target='_blank' rel='noreferrer'>
-                <FontAwesomeIcon icon={['fab', 'twitch']} />
+                <FontAwesomeIcon icon={faTwitch} />
             </a>}
         </div>
     );
