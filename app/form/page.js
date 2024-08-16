@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { createClient } from '@/utils/supabase/client';
@@ -9,6 +9,7 @@ export default function Form() {
     const searchParams = useSearchParams();
     const [formData, setFormData] = useState(null);
     const supabase = createClient();
+    const router = useRouter();
 
     useEffect(() => {
         const type = searchParams.get('type');
@@ -30,21 +31,6 @@ export default function Form() {
     if (!formData) {
         return <div>Loading...</div>;
     }
-
-    // var creatorData = type == 'Add' ? [] : 
-
-    // const { data, error } = await supabase.from('movies').insert([
-    //     {
-    //       name: 'The Empire Strikes Back',
-    //       description:
-    //         'After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda.',
-    //     },
-    //     {
-    //       name: 'Return of the Jedi',
-    //       description:
-    //         'After a daring mission to rescue Han Solo from Jabba the Hutt, the Rebels dispatch to Endor to destroy the second Death Star.',
-    //     },
-    //   ])
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -80,7 +66,11 @@ export default function Form() {
             ]);
 
         if (error) console.error('Error adding creator:', error);
-        else console.log('Creator added successfully:', data);
+        else {
+            console.log('Creator added successfully:', data)
+            router.push('/'); //redirect to homepage
+        }
+            ;
 
     }
 
@@ -100,7 +90,10 @@ export default function Form() {
             .eq('id', formData.id); // Assuming you have an id field
 
         if (error) console.error('Error updating creator:', error);
-        else console.log('Creator updated successfully:', data);
+        else {
+            console.log('Creator updated successfully:', data)
+            router.push(`/?creatorId=${formData.id}`);
+        };
     };
 
     return (
