@@ -56,11 +56,6 @@
   &:hover{
  box-shadow: 0 0 6px var(--pico-primary-background);   
   }
-
-  .primaryBtn {
-    font-size: medium;
-    padding: 12px;
-  }
   
 }
 
@@ -105,16 +100,6 @@
     background: rgba(var(--card-rgb), 0.1);
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
   }
-
-  .primaryBtn:hover {
-    background-color: var(--pico-secondary);
-    /* color: var(--pico-primary); */
-    border-color: var(--pico-secondary) !important;
-   } 
-  .primaryBtn:hover span {
-    
-    transform: translateX(4px);
-  }
 }
 
 @media (prefers-reduced-motion) {
@@ -152,53 +137,7 @@
     transform: none;
     height: 300px;
   }
-
-  .description {
-    font-size: 0.8rem;
-  }
-
-  .description a {
-    padding: 1rem;
-  }
-
-  .description p,
-  .description div {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    width: 100%;
-  }
-
-  .description p {
-    align-items: center;
-    inset: 0 0 auto;
-    padding: 2rem 1rem 1.4rem;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--background-start-rgb), 1),
-      rgba(var(--callout-rgb), 0.5)
-    );
-    background-clip: padding-box;
-    backdrop-filter: blur(24px);
-  }
-
-  .description div {
-    align-items: flex-end;
-    pointer-events: none;
-    inset: auto 0 0;
-    padding: 2rem;
-    height: 200px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
-    );
-    z-index: 1;
-  }
-}
+} 
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {

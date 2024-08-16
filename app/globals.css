@@ -104,6 +104,44 @@ body {
   }
 }
 
+.text-center {
+  text-align: center;
+}
+
+.modal-styles {
+  background: url('/assets/codioful-site-background.jpg') fixed;
+  background-size: contain;
+
+  .center-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.modal-styles header {
+  background: transparent;
+  border: none;
+}
+
+.primaryBtn {
+  font-size: medium;
+  padding: 12px;
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .primaryBtn:hover {
+    background-color: var(--pico-secondary);
+    /* color: var(--pico-primary); */
+    border-color: var(--pico-secondary) !important;
+   } 
+  .primaryBtn:hover span {
+    
+    transform: translateX(4px);
+  }
+}
+
 .btn-primary {
   background-color: transparent !important;
   color: var(--pico-primary);
