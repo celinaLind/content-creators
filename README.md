@@ -46,7 +46,8 @@ GIF created with ...  👉🏿 GIF tool here
 
 ## Notes
 
-Describe any challenges encountered while building the app or any additional context you'd like to add.
+There were so many different recommendations and ways to incorporate supabase that I got a little overwhelmed trying to figure out which method to use. I struggled with restyling and grasping how to update the picos features.
+
 
 ## License
 
