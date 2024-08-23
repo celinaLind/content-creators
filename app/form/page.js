@@ -137,7 +137,7 @@ export default function Form() {
                             onChange={handleInputChange}
                         />
                     </label>
-                    <h4>Socials (don't include the @ symbol)</h4>
+                    <h4>Socials (don&apos;t include the @ symbol)</h4>
                     <label>
                         Instagram
                         <input
