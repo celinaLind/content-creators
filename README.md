@@ -35,13 +35,13 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-👉🏿<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+https://github.com/user-attachments/assets/f6813982-ed85-4b8f-9ad4-fbfe97b44618
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  👉🏿 GIF tool here
+GIF created with ...  Screenrecorder and then compressed file with Vimeo
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
+[ScreenToGif](https://www.screentogif.com/) for Windows [caused errors on my machine]
 [peek](https://github.com/phw/peek) for Linux. -->
 
 ## Notes
@@ -51,7 +51,7 @@ There were so many different recommendations and ways to incorporate supabase th
 
 ## License
 
-Copyright [2024] [Celina Lind]
+Copyright 2024 Celina Lind
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
