@@ -3,23 +3,25 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import styles from "./page.module.css";
 import CreatorProfile from "./components/CreatorProfile"
+import CreatorPage from "./creator/page";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 const SocialMedia = dynamic(() => import('./components/SocialMedia'), { ssr: false });
 import { createClient } from "@/utils/supabase/client";
 import { useSearchParams } from "next/navigation";
+
 export default function Home() {
   const searchParams = useSearchParams();
-  const [openProfileId, setOpenProfileId] = useState(null);
+  // const [openProfileId, setOpenProfileId] = useState(null);
   const [creatorsData, setCreatorsData] =useState([]);
   const supabase = createClient();
 
-  useEffect(() => {
-    const creatorId = searchParams.get("creatorId");
-    if (creatorId) {
-      setOpenProfileId(creatorId);
-    }
-  }, [searchParams]);
+  // useEffect(() => {
+  //   const creatorId = searchParams.get("creatorId");
+  //   // if (creatorId) {
+  //   //   setOpenProfileId(creatorId);
+  //   // }
+  // }, [searchParams]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -59,7 +61,10 @@ export default function Home() {
                     {creator.name} 
                   </h2>
                   <p>{creator.contentType}</p>
-                  <CreatorProfile creatorData={creator} isModalOpen={openProfileId === creator.id} setIsModalOpen={(isOpen) => setOpenProfileId(isOpen ? creator.id :null)}/>
+                  {/* <CreatorProfile creatorData={creator} isModalOpen={openProfileId === creator.id} setIsModalOpen={(isOpen) => setOpenProfileId(isOpen ? creator.id :null)}/> */}
+                {/* <CreatorPage creatorData={creator}/> */}
+                <Link href={`/creator?creatorData=${encodeURIComponent(JSON.stringify(creator))}`} passHref legacyBehavior><button className="primaryBtn">Profile<span>-&gt;</span></button></Link>
+                {/* <button className="primaryBtn">Profile<span>-&gt;</span></button> */}
                 </div>
               </div>
               <SocialMedia linkedInUser={creator.linkedIn} tiktokUser={creator.tiktok} twitchUser={creator.twitch} youtubeUser={creator.youtube} instagramUser={creator.instagram} discordChannel={creator.discord}></SocialMedia>
