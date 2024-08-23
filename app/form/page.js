@@ -92,7 +92,7 @@ export default function Form() {
         if (error) console.error('Error updating creator:', error);
         else {
             console.log('Creator updated successfully:', data)
-            router.push(`/?creatorId=${formData.id}`);
+            router.push(`/`);
         };
     };
 
